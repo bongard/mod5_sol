@@ -106,7 +106,7 @@ function buildAndShowHomeHTML (categories) {
                           categoriesTitleHtml,
                           allCategoriesUrl,
                           categoryHtml);
-     
+         
 
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
@@ -120,23 +120,27 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
       //
-      var homeHtmlToInsertIntoMainPage = homeHtml;
-      homeHtmlToInsertIntoMainPage += "<section class='row'>";
+      var homeHtmlToInsertIntoMainPage = homeHtml
+        insertProperty (homeHtml, "chosenCategoryShortName", chosenCategoryShortName);
+        
 
-      for (var i = 0; i < categories.lenght; i++) {
+        //$dc.loadMenuItems('chosenCategoryShortName');
+     // homeHtmlToInsertIntoMainPage += "<section class='row'>";
+
+     // for (var i = 0; i < categories.lenght; i++) {
 
       //var randomCategoryShortName = chosenCategoryShortName;  
-      homeHtml =
-          insertProperty(homeHtml, "chosenCategoryShortName", chosenCategoryShortName);
+     // homeHtml =
+     //     insertProperty(homeHtml, "chosenCategoryShortName", chosenCategoryShortName);
 
-        homeHtmlToInsertIntoMainPage += homeHtml;
+      //  homeHtmlToInsertIntoMainPage += homeHtml;
         
-        homeHtmlToInsertIntoMainPage += "</section>";
-        return homeHtmlToInsertIntoMainPage;
-        $dc.loadMenuItems('SP');
-     }
-    
-    
+      //  homeHtmlToInsertIntoMainPage += "</section>";
+      //  return homeHtmlToInsertIntoMainPage;
+      //  $dc.loadMenuItems('chosenCategoryShortName');
+     //}
+     
+   
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
@@ -231,7 +235,7 @@ function buildCategoriesViewHtml(categories,
   return finalHtml;
 }
 
-
+ 
 
 // Builds HTML for the single category page based on the data
 // from the server
